@@ -1,24 +1,23 @@
 #include <iostream>
-#include <vector>
- int suma(std::vector<int> liczby,int x , int y){
-    int suma=0;
-    for (int i = 0; i < x; ++i) {
-        std::cout<<"Wprowadź liczbę: ";
-        std::cin>>y;
-        liczby.push_back(y);
-    }
-    for (int i = 0; i < liczby.size(); ++i) {
-        suma += liczby[i];
-    }
-    std::cout<<"Suma wynosi: ";
-     return suma;
-}
 
 int main() {
-    int x,y=0;
-    std::cout<<"Wprowadź ilość liczb: ";
-    std::cin>>x;
-    std::vector<int> liczby;
-    std::cout<<suma(liczby,x,y);
+    int wysokość=0;
+    std::cout<<"Wprowadź wysokość: ";
+    std::cin>>wysokość;
+    for (int i = 0; i < wysokość; ++i) {
+        const int miejsca=wysokość - i;
+        for (int j = 0; j < miejsca; ++j) {
+            std::cout<<" ";
+        }
+        const int gwiazdki=i*2+1;
+        for (int j = 0; j < gwiazdki; ++j) {
+            std::cout<<"*";
+        }
+        std::cout<<'\n';
+    }
+    for (int i = 0; i < wysokość; ++i) {
+        std::cout<<" ";
+    }
+    std::cout<<"*";
     return 0;
 }
